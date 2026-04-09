@@ -36,7 +36,7 @@
     header img {
       display: block;
       margin: 0 auto;
-      height: 52px;
+      height: 80px;
       width: auto;
     }
 
@@ -80,7 +80,7 @@
       color: #b01010;
     }
 
-    /* hero — two column: text left, portrait image right */
+    /* hero */
 
     .hero {
       border-bottom: 1px solid #111111;
@@ -95,6 +95,16 @@
     .hero-text {
       padding: 80px 60px 80px 0;
       border-right: 1px solid #111111;
+    }
+
+    .hero-welcome {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1em;
+      font-style: italic;
+      letter-spacing: 0.18em;
+      color: #b01010;
+      margin: 0 0 16px;
+      text-transform: uppercase;
     }
 
     .hero-text h1 {
@@ -144,7 +154,8 @@
     .hero-img {
       display: block;
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
     }
 
     /* intro strip */
@@ -198,7 +209,8 @@
     .tier-card img {
       display: block;
       width: 100%;
-      height: auto;
+      height: 420px;
+      object-fit: cover;
     }
 
     .tier-info {
@@ -283,7 +295,8 @@
     .about img {
       display: block;
       width: 100%;
-      height: auto;
+      height: 600px;
+      object-fit: cover;
     }
 
     /* footer */
@@ -298,7 +311,7 @@
     footer img {
       display: block;
       margin: 0 auto 20px;
-      height: 36px;
+      height: 56px;
       width: auto;
     }
 
@@ -372,7 +385,7 @@
 
   <header>
     <div class="wrap">
-      <img src="images/logo.png" width="96" height="52" alt="Glitter and Thorn">
+      <img src="logo.png" width="160" height="80" alt="Glitter and Thorn">
     </div>
   </header>
 
@@ -393,13 +406,14 @@
       <div class="hero-grid">
 
         <div class="hero-text">
+          <p class="hero-welcome">Welcome to Glitter &amp; Thorn</p>
           <h1>Love Better.</h1>
-          <p>Handmade eternal rose bouquets.<br>Kitchener / Waterloo &amp; GTA.</p>
+          <p>Handmade eternal and fresh rose bouquets.<br>Kitchener / Waterloo &amp; GTA.</p>
           <a href="bouquets.html">Shop Bouquets</a>
         </div>
 
         <div>
-          <img src="images/hero.jpg" width="600" height="800" alt="Glitter and Thorn luxury rose bouquet" class="hero-img">
+          <img src="hero.png" width="600" height="800" alt="Glitter and Thorn luxury rose bouquet" class="hero-img">
         </div>
 
       </div>
@@ -419,7 +433,7 @@
       <div class="tier-grid">
 
         <div class="tier-card">
-          <img src="images/t1.jpg" width="396" height="500" alt="Starter bouquet from Glitter and Thorn">
+          <img src="t1.jpg" width="396" height="500" alt="Starter bouquet from Glitter and Thorn">
           <div class="tier-info">
             <h2>Starter</h2>
             <p>12 or 24 roses</p>
@@ -428,7 +442,7 @@
         </div>
 
         <div class="tier-card">
-          <img src="images/t2.jpg" width="396" height="500" alt="Statement bouquet from Glitter and Thorn">
+          <img src="t2.JPG" width="396" height="500" alt="Statement bouquet from Glitter and Thorn">
           <div class="tier-info">
             <h2>Statement</h2>
             <p>36 or 48 roses</p>
@@ -437,7 +451,7 @@
         </div>
 
         <div class="tier-card">
-          <img src="images/t3.jpg" width="396" height="500" alt="Grand bouquet from Glitter and Thorn">
+          <img src="t3.jpg" width="396" height="500" alt="Grand bouquet from Glitter and Thorn">
           <div class="tier-info">
             <h2>Grand</h2>
             <p>72 or 100 roses</p>
@@ -461,7 +475,7 @@
         </div>
 
         <div>
-          <img src="images/about.jpg" width="580" height="780" alt="Glitter and Thorn bouquet close-up">
+          <img src="about.jpg" width="580" height="780" alt="Glitter and Thorn bouquet close-up">
         </div>
 
       </div>
@@ -470,7 +484,7 @@
 
   <footer>
     <div class="wrap">
-      <img src="images/logo.png" width="80" height="43" alt="Glitter and Thorn">
+      <img src="logo.png" width="120" height="56" alt="Glitter and Thorn">
       <div class="footer-links">
         <a href="index.html">Home</a>
         <a href="bouquets.html">Bouquets</a>
