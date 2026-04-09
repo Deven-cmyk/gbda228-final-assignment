@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <title>Order — Glitter & Thorn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #111111;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 16px;
+    }
+
+    .wrap {
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid #111111;
+      padding: 28px 0;
+    }
+
+    header img {
+      display: block;
+      margin: 0 auto;
+      height: 52px;
+      width: auto;
+    }
+
+    nav {
+      border-bottom: 1px solid #111111;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    nav li {
+      display: inline-block;
+    }
+
+    nav a:link {
+      display: inline-block;
+      padding: 14px 30px;
+      font-size: 0.68em;
+      font-weight: bold;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #111111;
+    }
+
+    nav a:visited {
+      color: #111111;
+    }
+
+    nav a:hover {
+      color: #b01010;
+    }
+
+    nav a:active {
+      color: #b01010;
+    }
+
+    .page-head {
+      padding: 48px 0;
+      border-bottom: 1px solid #111111;
+    }
+
+    .page-head h1 {
+      font-size: 2.2em;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin: 0 0 8px;
+    }
+
+    .page-head p {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.05em;
+      font-style: italic;
+      color: #666666;
+      margin: 0;
+    }
+
+    /* contact + steps two-col */
+
+    .contact-section {
+      padding: 60px 0;
+      border-bottom: 1px solid #111111;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+
+    .col-label {
+      font-size: 0.65em;
+      font-weight: bold;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #b01010;
+      margin: 0 0 6px;
+    }
+
+    .col-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0 0 32px;
+    }
+
+    /* individual contact detail blocks */
+    .detail {
+      border-left: 2px solid #111111;
+      padding-left: 16px;
+      margin-bottom: 22px;
+    }
+
+    .detail-label {
+      font-size: 0.62em;
+      font-weight: bold;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #b01010;
+      margin: 0 0 4px;
+    }
+
+    .detail p {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.05em;
+      color: #111111;
+      margin: 0;
+    }
+
+    .detail a:link {
+      color: #111111;
+      text-decoration: none;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.05em;
+    }
+
+    .detail a:visited {
+      color: #555555;
+    }
+
+    .detail a:hover {
+      color: #b01010;
+    }
+
+    .detail a:active {
+      color: #b01010;
+    }
+
+    /* how it works steps */
+
+    .step {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+      align-items: start;
+    }
+
+    .step-num {
+      background-color: #b01010;
+      color: #ffffff;
+      font-size: 0.75em;
+      font-weight: bold;
+      text-align: center;
+      padding: 8px 0;
+    }
+
+    .step-body h3 {
+      font-size: 0.72em;
+      font-weight: bold;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin: 6px 0 4px;
+    }
+
+    .step-body p {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1em;
+      color: #666666;
+      font-style: italic;
+      margin: 0;
+    }
+
+    .step-body a:link {
+      color: #b01010;
+      text-decoration: none;
+    }
+
+    .step-body a:visited {
+      color: #b01010;
+    }
+
+    .step-body a:hover {
+      text-decoration: underline;
+    }
+
+    .step-body a:active {
+      color: #111111;
+    }
+
+    /* gallery — 4 col */
+
+    .gallery-section {
+      padding: 60px 0;
+      border-bottom: 1px solid #111111;
+    }
+
+    .section-label {
+      font-size: 0.65em;
+      font-weight: bold;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #b01010;
+      margin: 0 0 28px;
+    }
+
+    .gallery-four {
+       display: grid;
+       grid-template-columns: 1fr 1fr 1fr 1fr;
+       gap: 0;
+       border: 1px solid #111111;
+    }
+
+    .gallery-four img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-right: 1px solid #111111;
+    }
+
+    .gallery-four img:last-child {
+      border-right: none;
+    }
+
+    /* delivery table */
+
+    .delivery-section {
+      padding: 60px 0;
+    }
+
+    .delivery-section h2 {
+      font-size: 0.65em;
+      font-weight: bold;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #b01010;
+      margin: 0 0 6px;
+    }
+
+    .delivery-section h3 {
+      font-size: 1.5em;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0 0 32px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background-color: #111111;
+    }
+
+    th {
+      font-size: 0.65em;
+      font-weight: bold;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 15px 18px;
+      text-align: left;
+      color: #ffffff;
+    }
+
+    td {
+      padding: 14px 18px;
+      border-bottom: 1px solid #e5e5e5;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.05em;
+      color: #444444;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    .td-free {
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      color: #b01010;
+      font-size: 0.9em;
+    }
+
+    .td-fee {
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      color: #111111;
+      font-size: 0.9em;
+    }
+
+    .delivery-note {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 0.95em;
+      font-style: italic;
+      color: #999999;
+      margin-top: 16px;
+    }
+
+    footer {
+      background-color: #111111;
+      color: #ffffff;
+      padding: 48px 0 36px;
+      text-align: center;
+      border-top: 1px solid #222222;
+    }
+
+    footer img {
+      display: block;
+      margin: 0 auto 20px;
+      height: 36px;
+      width: auto;
+    }
+
+    .footer-links {
+      margin-bottom: 24px;
+    }
+
+    .footer-links a:link {
+      color: #999999;
+      text-decoration: none;
+      font-size: 0.65em;
+      font-weight: bold;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin: 0 16px;
+    }
+
+    .footer-links a:visited {
+      color: #999999;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+
+    .footer-links a:active {
+      color: #b01010;
+    }
+
+    footer hr {
+      border: none;
+      border-top: 1px solid #333333;
+      width: 40px;
+      margin: 20px auto;
+    }
+
+    .footer-contact {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 0.95em;
+      color: #777777;
+      margin: 6px 0;
+    }
+
+    .footer-contact a:link {
+      color: #b01010;
+      text-decoration: none;
+    }
+
+    .footer-contact a:visited {
+      color: #b01010;
+    }
+
+    .footer-contact a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-contact a:active {
+      color: #ffffff;
+    }
+
+    .footer-copy {
+      font-size: 0.65em;
+      color: #444444;
+      margin-top: 28px;
+      letter-spacing: 0.1em;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <img src="images/logo.png" width="96" height="52" alt="Glitter and Thorn">
+    </div>
+  </header>
+
+  <nav>
+    <div class="wrap">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="bouquets.html">Bouquets</a></li>
+        <li><a href="addons.html">Add-Ons</a></li>
+        <li><a href="contact.html">Order</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-head">
+    <div class="wrap">
+      <h1>Order</h1>
+      <p>All orders are placed through Instagram DMs or email.</p>
+    </div>
+  </div>
+
+  <!-- contact + steps -->
+  <div class="contact-section">
+    <div class="wrap">
+      <div class="contact-grid">
+
+        <div>
+          <p class="col-label">Reach Us</p>
+          <p class="col-title">Contact</p>
+
+          <div class="detail">
+            <p class="detail-label">Instagram</p>
+            <a href="https://www.instagram.com/glitter.thorn" target="_blank">@glitter.thorn</a>
+          </div>
+
+          <div class="detail">
+            <p class="detail-label">Email</p>
+            <a href="mailto:glitterthorn.inc@gmail.com">glitterthorn.inc@gmail.com</a>
+          </div>
+
+          <div class="detail">
+            <p class="detail-label">Phone</p>
+            <a href="tel:6475492397">647-549-2397</a>
+          </div>
+
+          <div class="detail">
+            <p class="detail-label">Location</p>
+            <p>Waterloo, Ontario</p>
+          </div>
+
+          <div class="detail">
+            <p class="detail-label">Delivery</p>
+            <p>Waterloo / Kitchener &amp; Greater Toronto Area</p>
+          </div>
+        </div>
+
+        <div>
+          <p class="col-label">Ordering</p>
+          <p class="col-title">How It Works</p>
+
+          <div class="step">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h3>Browse</h3>
+              <p>Choose your size from the <a href="bouquets.html">bouquets page</a> and any <a href="addons.html">add-ons</a>.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h3>DM Us</h3>
+              <p>Message <a href="https://www.instagram.com/glitter.thorn" target="_blank">@glitter.thorn</a> on Instagram with your order and preferred date.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h3>Pay</h3>
+              <p>We confirm your total and send a payment request. Order is locked in once paid.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h3>Pickup or Delivery</h3>
+              <p>Free pickup in Waterloo / Kitchener. Delivery rates are listed below.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- gallery -->
+  <div class="gallery-section">
+    <div class="wrap">
+      <p class="section-label">Recent Work</p>
+      <div class="gallery-four">
+        <img src="images/g1.jpg" width="298" height="360" alt="Glitter and Thorn bouquet being held at University of Waterloo">
+        <img src="images/g2.jpg" width="298" height="360" alt="Glitter and Thorn delivery in car trunk in snow">
+        <img src="images/g3.jpg" width="298" height="360" alt="Glitter and Thorn Hello Kitty plushie bouquet">
+        <img src="images/g4.jpg" width="298" height="360" alt="Glitter and Thorn fresh flower arrangements">
+      </div>
+    </div>
+  </div>
+
+  <!-- delivery table -->
+  <div class="delivery-section">
+    <div class="wrap">
+      <h2>Delivery</h2>
+      <h3>Rates</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>Fee</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Waterloo / Kitchener</td>
+            <td class="td-free">Free Pickup</td>
+            <td>Local pickup at no charge.</td>
+          </tr>
+          <tr>
+            <td>Cambridge / Guelph</td>
+            <td class="td-fee">$10–$15</td>
+            <td>DM your postal code for a quote.</td>
+          </tr>
+          <tr>
+            <td>Milton / Mississauga / Brampton</td>
+            <td class="td-fee">$25–$35</td>
+            <td>DM your postal code for a quote.</td>
+          </tr>
+          <tr>
+            <td>Toronto / Etobicoke</td>
+            <td class="td-fee">$45–$55</td>
+            <td>DM your postal code for a quote.</td>
+          </tr>
+          <tr>
+            <td>Scarborough / Markham</td>
+            <td class="td-fee">$60+</td>
+            <td>DM your postal code for a quote.</td>
+          </tr>
+          <tr>
+            <td>GTA Halfway Meetup</td>
+            <td class="td-fee">$15 flat</td>
+            <td>Location agreed at time of order.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="delivery-note">DM your postal code and we'll give you an exact quote.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <img src="images/logo.png" width="80" height="43" alt="Glitter and Thorn">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="bouquets.html">Bouquets</a>
+        <a href="addons.html">Add-Ons</a>
+        <a href="contact.html">Order</a>
+      </div>
+      <hr>
+      <p class="footer-contact"><a href="https://www.instagram.com/glitter.thorn" target="_blank">@glitter.thorn</a></p>
+      <p class="footer-contact"><a href="mailto:glitterthorn.inc@gmail.com">glitterthorn.inc@gmail.com</a></p>
+      <p class="footer-contact">647-549-2397</p>
+      <p class="footer-copy">&copy; 2025 Glitter &amp; Thorn &mdash; Waterloo, Ontario</p>
+    </div>
+  </footer>
+
+<!--
+  AI assistance note (as required by assignment):
+  Tool used: Claude (Anthropic)
+  Prompt used: Asked Claude to help build the "How It Works" numbered step layout
+  using a 2-column grid with the number box on the left. Also helped figure out
+  the delivery table row hover styling.
+  All content, wording, and design direction is my own.
+-->
+
+</body>
+</html>

@@ -1,1 +1,497 @@
-<h1>Hello World Wide Web!</h1>
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <title>Glitter & Thorn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #111111;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 16px;
+    }
+
+    .wrap {
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* header */
+
+    header {
+      border-bottom: 1px solid #111111;
+      padding: 28px 0;
+    }
+
+    header img {
+      display: block;
+      margin: 0 auto;
+      height: 52px;
+      width: auto;
+    }
+
+    /* nav */
+
+    nav {
+      border-bottom: 1px solid #111111;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    nav li {
+       display: inline-block;
+    }
+
+    nav a:link {
+      display: inline-block;
+      padding: 14px 30px;
+      font-size: 0.68em;
+      font-weight: bold;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #111111;
+    }
+
+    nav a:visited {
+      color: #111111;
+    }
+
+    nav a:hover {
+      color: #b01010;
+    }
+
+    nav a:active {
+      color: #b01010;
+    }
+
+    /* hero — two column: text left, portrait image right */
+
+    .hero {
+      border-bottom: 1px solid #111111;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .hero-text {
+      padding: 80px 60px 80px 0;
+      border-right: 1px solid #111111;
+    }
+
+    .hero-text h1 {
+      font-size: 5em;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin: 0 0 24px;
+    }
+
+    .hero-text p {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.15em;
+      font-style: italic;
+      color: #666666;
+      margin: 0 0 40px;
+      line-height: 1.6;
+    }
+
+    /* button styling for the shop link */
+    .hero-text a:link {
+      display: inline-block;
+      background-color: #111111;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 36px;
+      font-size: 0.68em;
+      font-weight: bold;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .hero-text a:visited {
+      color: #ffffff;
+    }
+
+    .hero-text a:hover {
+      background-color: #b01010;
+      color: #ffffff;
+    }
+
+    .hero-text a:active {
+      background-color: #b01010;
+    }
+
+    .hero-img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* intro strip */
+
+    .intro {
+      padding: 48px 0;
+      border-bottom: 1px solid #111111;
+      text-align: center;
+    }
+
+    .intro p {
+      font-size: 0.68em;
+      font-weight: bold;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: #b01010;
+      margin: 0;
+    }
+
+    /* tier preview — 3 col */
+
+    .tiers {
+      padding: 60px 0;
+      border-bottom: 1px solid #111111;
+    }
+
+    .tiers-label {
+      font-size: 0.65em;
+      font-weight: bold;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #b01010;
+      margin: 0 0 40px;
+    }
+
+    .tier-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      border: 1px solid #111111;
+    }
+
+    .tier-card {
+      border-right: 1px solid #111111;
+    }
+
+    .tier-card:last-child {
+      border-right: none;
+    }
+
+    .tier-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .tier-info {
+      padding: 22px 20px 28px;
+      border-top: 1px solid #111111;
+    }
+
+    .tier-info h2 {
+      font-size: 0.7em;
+      font-weight: bold;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin: 0 0 6px;
+    }
+
+    .tier-info p {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1em;
+      color: #555555;
+      font-style: italic;
+      margin: 0 0 14px;
+    }
+
+    .tier-price {
+      font-size: 1.05em;
+      font-weight: bold;
+    }
+
+    .tier-price span {
+      color: #b01010;
+      font-size: 0.8em;
+      font-weight: normal;
+      margin-left: 8px;
+    }
+
+    /* about section */
+
+    .about {
+      padding: 60px 0;
+      border-bottom: 1px solid #111111;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .about-text h2 {
+      font-size: 2em;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin: 0 0 20px;
+    }
+
+    .about-text p {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #444444;
+      margin-bottom: 14px;
+    }
+
+    .about-text a:link {
+       color: #b01010;
+       text-decoration: none;
+    }
+
+    .about-text a:visited {
+      color: #b01010;
+    }
+
+    .about-text a:hover {
+      text-decoration: underline;
+    }
+
+    .about-text a:active {
+      color: #111111;
+    }
+
+    .about img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* footer */
+
+    footer {
+      background-color: #111111;
+      color: #ffffff;
+      padding: 48px 0 36px;
+      text-align: center;
+    }
+
+    footer img {
+      display: block;
+      margin: 0 auto 20px;
+      height: 36px;
+      width: auto;
+    }
+
+    .footer-links {
+      margin-bottom: 24px;
+    }
+
+    .footer-links a:link {
+      color: #999999;
+      text-decoration: none;
+      font-size: 0.65em;
+      font-weight: bold;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin: 0 16px;
+    }
+
+    .footer-links a:visited {
+      color: #999999;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+
+    .footer-links a:active {
+      color: #b01010;
+    }
+
+    footer hr {
+      border: none;
+      border-top: 1px solid #333333;
+      width: 40px;
+      margin: 20px auto;
+    }
+
+    .footer-contact {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 0.95em;
+      color: #777777;
+      margin: 6px 0;
+    }
+
+    .footer-contact a:link {
+      color: #b01010;
+      text-decoration: none;
+    }
+
+    .footer-contact a:visited {
+      color: #b01010;
+    }
+
+    .footer-contact a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-contact a:active {
+      color: #ffffff;
+    }
+
+    .footer-copy {
+      font-size: 0.65em;
+      color: #444444;
+      margin-top: 28px;
+      letter-spacing: 0.1em;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <img src="images/logo.png" width="96" height="52" alt="Glitter and Thorn">
+    </div>
+  </header>
+
+  <nav>
+    <div class="wrap">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="bouquets.html">Bouquets</a></li>
+        <li><a href="addons.html">Add-Ons</a></li>
+        <li><a href="contact.html">Order</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- hero: text left, portrait image right -->
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+
+        <div class="hero-text">
+          <h1>Love Better.</h1>
+          <p>Handmade eternal rose bouquets.<br>Kitchener / Waterloo &amp; GTA.</p>
+          <a href="bouquets.html">Shop Bouquets</a>
+        </div>
+
+        <div>
+          <img src="images/hero.jpg" width="600" height="800" alt="Glitter and Thorn luxury rose bouquet" class="hero-img">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="intro">
+    <div class="wrap">
+      <p>Free Pickup in Waterloo &nbsp;&middot;&nbsp; GTA Delivery Available &nbsp;&middot;&nbsp; DM @glitter.thorn to Order</p>
+    </div>
+  </div>
+
+  <!-- 3-column tier preview -->
+  <div class="tiers">
+    <div class="wrap">
+      <p class="tiers-label">The Collection</p>
+      <div class="tier-grid">
+
+        <div class="tier-card">
+          <img src="images/t1.jpg" width="396" height="500" alt="Starter bouquet from Glitter and Thorn">
+          <div class="tier-info">
+            <h2>Starter</h2>
+            <p>12 or 24 roses</p>
+            <p class="tier-price">From $35 <span>+ Glitter $10</span></p>
+          </div>
+        </div>
+
+        <div class="tier-card">
+          <img src="images/t2.jpg" width="396" height="500" alt="Statement bouquet from Glitter and Thorn">
+          <div class="tier-info">
+            <h2>Statement</h2>
+            <p>36 or 48 roses</p>
+            <p class="tier-price">From $85 <span>+ Glitter $15</span></p>
+          </div>
+        </div>
+
+        <div class="tier-card">
+          <img src="images/t3.jpg" width="396" height="500" alt="Grand bouquet from Glitter and Thorn">
+          <div class="tier-info">
+            <h2>Grand</h2>
+            <p>72 or 100 roses</p>
+            <p class="tier-price">From $140 <span>+ Glitter $25</span></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- about -->
+  <div class="about">
+    <div class="wrap">
+      <div class="about-grid">
+
+        <div class="about-text">
+          <h2>About</h2>
+          <p>Glitter &amp; Thorn is a handmade floral business out of Waterloo, Ontario. Every bouquet is built from scratch using premium eternal bridal roses.</p>
+          <p>Order on Instagram at <a href="https://www.instagram.com/glitter.thorn" target="_blank">@glitter.thorn</a> or email <a href="mailto:glitterthorn.inc@gmail.com">glitterthorn.inc@gmail.com</a>.</p>
+        </div>
+
+        <div>
+          <img src="images/about.jpg" width="580" height="780" alt="Glitter and Thorn bouquet close-up">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <img src="images/logo.png" width="80" height="43" alt="Glitter and Thorn">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="bouquets.html">Bouquets</a>
+        <a href="addons.html">Add-Ons</a>
+        <a href="contact.html">Order</a>
+      </div>
+      <hr>
+      <p class="footer-contact"><a href="https://www.instagram.com/glitter.thorn" target="_blank">@glitter.thorn</a></p>
+      <p class="footer-contact"><a href="mailto:glitterthorn.inc@gmail.com">glitterthorn.inc@gmail.com</a></p>
+      <p class="footer-contact">647-549-2397</p>
+      <p class="footer-copy">&copy; 2025 Glitter &amp; Thorn &mdash; Waterloo, Ontario</p>
+    </div>
+  </footer>
+
+<!--
+  AI assistance note (as required by assignment):
+  Tool used: Claude (Anthropic)
+  Prompt used: Asked Claude to help troubleshoot CSS grid layout for the hero section
+  and the 3-column tier preview. Also used to debug the nav link hover states.
+  The overall page structure, content, and design decisions are my own.
+-->
+
+</body>
+</html>

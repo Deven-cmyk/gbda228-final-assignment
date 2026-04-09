@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <title>Add-Ons — Glitter & Thorn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #111111;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 16px;
+    }
+
+    .wrap {
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid #111111;
+      padding: 28px 0;
+    }
+
+    header img {
+      display: block;
+      margin: 0 auto;
+      height: 52px;
+      width: auto;
+    }
+
+    nav {
+      border-bottom: 1px solid #111111;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    nav li {
+      display: inline-block;
+    }
+
+    nav a:link {
+      display: inline-block;
+      padding: 14px 30px;
+      font-size: 0.68em;
+      font-weight: bold;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #111111;
+    }
+
+    nav a:visited {
+      color: #111111;
+    }
+
+    nav a:hover {
+      color: #b01010;
+    }
+
+    nav a:active {
+      color: #b01010;
+    }
+
+    .page-head {
+      padding: 48px 0;
+      border-bottom: 1px solid #111111;
+    }
+
+    .page-head h1 {
+      font-size: 2.2em;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin: 0 0 8px;
+    }
+
+    .page-head p {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.05em;
+      font-style: italic;
+      color: #666666;
+      margin: 0;
+    }
+
+    /* inspo gallery — 3 col */
+
+    .gallery {
+      padding: 56px 0;
+      border-bottom: 1px solid #111111;
+    }
+
+    .gallery-label {
+      font-size: 0.65em;
+      font-weight: bold;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #b01010;
+      margin: 0 0 28px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      border: 1px solid #111111;
+    }
+
+    .gallery-grid img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-right: 1px solid #111111;
+    }
+
+    .gallery-grid img:last-child {
+      border-right: none;
+    }
+
+    /* category sections */
+
+    .category {
+      padding: 56px 0;
+      border-bottom: 1px solid #111111;
+    }
+
+    .category h2 {
+      font-size: 0.65em;
+      font-weight: bold;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #b01010;
+      margin: 0 0 6px;
+    }
+
+    .category h3 {
+       font-size: 1.5em;
+       font-weight: bold;
+       text-transform: uppercase;
+       margin: 0 0 32px;
+    }
+
+    /* 4-col add-on grid */
+
+    .addon-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 0;
+      border: 1px solid #111111;
+    }
+
+    .addon-card {
+      padding: 24px 20px 28px;
+      border-right: 1px solid #111111;
+    }
+
+    .addon-card:last-child {
+      border-right: none;
+    }
+
+    .addon-card h4 {
+      font-size: 0.7em;
+      font-weight: bold;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+    }
+
+    .addon-price {
+      display: inline-block;
+      background-color: #b01010;
+      color: #ffffff;
+      font-size: 0.72em;
+      font-weight: bold;
+      padding: 3px 10px;
+      margin-bottom: 12px;
+    }
+
+    .addon-card p {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 0.95em;
+      color: #666666;
+      font-style: italic;
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    /* 2-col variant for personalization */
+
+    .addon-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid #111111;
+    }
+
+    .addon-grid-2 .addon-card {
+      border-right: 1px solid #111111;
+    }
+
+    .addon-grid-2 .addon-card:last-child {
+      border-right: none;
+    }
+
+    /* full reference table */
+
+    .full-table {
+      padding: 56px 0;
+      background-color: #111111;
+    }
+
+    .full-table h2 {
+      font-size: 0.65em;
+      font-weight: bold;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #b01010;
+      margin: 0 0 6px;
+    }
+
+    .full-table h3 {
+      font-size: 1.5em;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin: 0 0 32px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead {
+      border-bottom: 2px solid #b01010;
+    }
+
+    th {
+      font-size: 0.65em;
+      font-weight: bold;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 14px 18px;
+      text-align: left;
+      color: #999999;
+    }
+
+    td {
+      padding: 13px 18px;
+      border-bottom: 1px solid #222222;
+      color: #cccccc;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.02em;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background-color: #1a1a1a;
+    }
+
+    .td-price {
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      color: #ffffff;
+      font-size: 0.9em;
+    }
+
+    footer {
+      background-color: #111111;
+      color: #ffffff;
+      padding: 48px 0 36px;
+      text-align: center;
+      border-top: 1px solid #222222;
+    }
+
+    footer img {
+      display: block;
+      margin: 0 auto 20px;
+      height: 36px;
+      width: auto;
+    }
+
+    .footer-links {
+      margin-bottom: 24px;
+    }
+
+    .footer-links a:link {
+      color: #999999;
+      text-decoration: none;
+      font-size: 0.65em;
+      font-weight: bold;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin: 0 16px;
+    }
+
+    .footer-links a:visited {
+      color: #999999;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+
+    .footer-links a:active {
+      color: #b01010;
+    }
+
+    footer hr {
+      border: none;
+      border-top: 1px solid #333333;
+      width: 40px;
+      margin: 20px auto;
+    }
+
+    .footer-contact {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 0.95em;
+      color: #777777;
+      margin: 6px 0;
+    }
+
+    .footer-contact a:link {
+      color: #b01010;
+      text-decoration: none;
+    }
+
+    .footer-contact a:visited {
+      color: #b01010;
+    }
+
+    .footer-contact a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-contact a:active {
+      color: #ffffff;
+    }
+
+    .footer-copy {
+      font-size: 0.65em;
+      color: #444444;
+      margin-top: 28px;
+      letter-spacing: 0.1em;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <img src="images/logo.png" width="96" height="52" alt="Glitter and Thorn">
+    </div>
+  </header>
+
+  <nav>
+    <div class="wrap">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="bouquets.html">Bouquets</a></li>
+        <li><a href="addons.html">Add-Ons</a></li>
+        <li><a href="contact.html">Order</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-head">
+    <div class="wrap">
+      <h1>Add-Ons</h1>
+      <p>All add-ons are priced individually and added to your bouquet total.</p>
+    </div>
+  </div>
+
+  <!-- inspo gallery -->
+  <div class="gallery">
+    <div class="wrap">
+      <p class="gallery-label">Examples</p>
+      <div class="gallery-grid">
+        <img src="images/inspo1.jpg" width="396" height="300" alt="Fresh flower arrangements from Glitter and Thorn">
+        <img src="images/inspo2.jpg" width="396" height="300" alt="Custom XO glitter rose bouquet from Glitter and Thorn">
+        <img src="images/inspo3.jpg" width="396" height="300" alt="Bouquet with Hello Kitty plushie add-on from Glitter and Thorn">
+      </div>
+    </div>
+  </div>
+
+  <!-- Accents -->
+  <div class="category">
+    <div class="wrap">
+      <h2>Category</h2>
+      <h3>Accents</h3>
+      <div class="addon-grid">
+
+        <div class="addon-card">
+          <h4>Butterfly</h4>
+          <div class="addon-price">$2.50</div>
+          <p>Silver butterfly sticker on the wrapping.</p>
+        </div>
+
+        <div class="addon-card">
+          <h4>Small Crown</h4>
+          <div class="addon-price">$2</div>
+          <p>Small decorative crown placed on top.</p>
+        </div>
+
+        <div class="addon-card">
+          <h4>Large Crown</h4>
+          <div class="addon-price">$5</div>
+          <p>Larger gold crown placed on top.</p>
+        </div>
+
+        <div class="addon-card">
+          <h4>Pearl / Crystal Pins</h4>
+          <div class="addon-price">$0.50 each</div>
+          <p>Individual pin accents added to the arrangement.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Wrapping -->
+  <div class="category">
+    <div class="wrap">
+      <h2>Category</h2>
+      <h3>Wrapping</h3>
+      <div class="addon-grid">
+
+        <div class="addon-card">
+          <h4>Designer Wrapping</h4>
+          <div class="addon-price">$3</div>
+          <p>Upgrade from standard to designer paper.</p>
+        </div>
+
+        <div class="addon-card">
+          <h4>Korean Tissue Paper</h4>
+          <div class="addon-price">$5</div>
+          <p>Soft tissue paper layer added inside the wrap.</p>
+        </div>
+
+        <div class="addon-card">
+          <h4>Pearl Bow</h4>
+          <div class="addon-price">$4</div>
+          <p>Pearl-accented bow tied on the ribbon.</p>
+        </div>
+
+        <div class="addon-card">
+          <h4>Pearl Lining</h4>
+          <div class="addon-price">$4</div>
+          <p>Pearl pins lining the inside of the wrap.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Luxury -->
+  <div class="category">
+    <div class="wrap">
+      <h2>Category</h2>
+      <h3>Luxury</h3>
+      <div class="addon-grid">
+
+        <div class="addon-card">
+          <h4>Burn Box</h4>
+          <div class="addon-price">$20</div>
+          <p>Round black box with black tissue lining.</p>
+        </div>
+
+        <div class="addon-card">
+          <h4>Tiara</h4>
+          <div class="addon-price">$7</div>
+          <p>Full-sized tiara placed on top of the bouquet.</p>
+        </div>
+
+        <div class="addon-card">
+          <h4>Banner</h4>
+          <div class="addon-price">$12</div>
+          <p>Custom message banner tied into the arrangement.</p>
+        </div>
+
+        <div class="addon-card">
+          <h4>Fairy Lights</h4>
+          <div class="addon-price">$12</div>
+          <p>String lights woven into the bouquet.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Personalization -->
+  <div class="category">
+    <div class="wrap">
+      <h2>Category</h2>
+      <h3>Personalization</h3>
+      <div class="addon-grid-2">
+
+        <div class="addon-card">
+          <h4>Initial / Number</h4>
+          <div class="addon-price">$20</div>
+          <p>Custom letter or number card made with glitter stickers and baby's breath.</p>
+        </div>
+
+        <div class="addon-card">
+          <h4>Money Bouquet</h4>
+          <div class="addon-price">$20</div>
+          <p>Bills folded and arranged inside the bouquet.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Gifts -->
+  <div class="category">
+    <div class="wrap">
+      <h2>Category</h2>
+      <h3>Gifts</h3>
+      <div class="addon-grid">
+
+        <div class="addon-card">
+          <h4>Large Plushie</h4>
+          <div class="addon-price">$15</div>
+          <p>Large stuffed animal alongside the bouquet.</p>
+        </div>
+
+        <div class="addon-card">
+          <h4>Small Plushie</h4>
+          <div class="addon-price">$7</div>
+          <p>Small stuffed animal tucked into the arrangement.</p>
+        </div>
+
+        <div class="addon-card">
+          <h4>Ferrero Rocher</h4>
+          <div class="addon-price">$3</div>
+          <p>Single chocolate on a clear stick inside the bouquet.</p>
+        </div>
+
+        <div class="addon-card">
+          <h4>Custom Topper</h4>
+          <div class="addon-price">$8</div>
+          <p>Personalized printed topper on the arrangement.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Full table -->
+  <div class="full-table">
+    <div class="wrap">
+      <h2>All Add-Ons</h2>
+      <h3>Quick Reference</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Add-On</th>
+            <th>Price</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Butterfly</td><td class="td-price">$2.50</td><td>Silver accent sticker</td></tr>
+          <tr><td>Small Crown</td><td class="td-price">$2</td><td>Sits on top</td></tr>
+          <tr><td>Large Crown</td><td class="td-price">$5</td><td>Sits on top</td></tr>
+          <tr><td>Pearl / Crystal Pins</td><td class="td-price">$0.50 each</td><td>Individual accents</td></tr>
+          <tr><td>Pearl Lining</td><td class="td-price">$4</td><td>Pins lining inside wrap</td></tr>
+          <tr><td>Pearl Bow</td><td class="td-price">$4</td><td>Tied on ribbon</td></tr>
+          <tr><td>Designer Wrapping</td><td class="td-price">$3</td><td>Upgrade from standard</td></tr>
+          <tr><td>Korean Tissue Paper</td><td class="td-price">$5</td><td>Inner tissue layer</td></tr>
+          <tr><td>Custom Topper</td><td class="td-price">$8</td><td>Personalized topper</td></tr>
+          <tr><td>Initial / Number</td><td class="td-price">$20</td><td>Glitter sticker card + baby's breath</td></tr>
+          <tr><td>Money Bouquet</td><td class="td-price">$20</td><td>Bills folded into arrangement</td></tr>
+          <tr><td>Banner</td><td class="td-price">$12</td><td>Custom message banner</td></tr>
+          <tr><td>Fairy Lights</td><td class="td-price">$12</td><td>String lights woven in</td></tr>
+          <tr><td>Tiara</td><td class="td-price">$7</td><td>Full tiara on bouquet</td></tr>
+          <tr><td>Burn Box</td><td class="td-price">$20</td><td>Round black box + tissue</td></tr>
+          <tr><td>Small Plushie</td><td class="td-price">$7</td><td>Stuffed animal</td></tr>
+          <tr><td>Large Plushie</td><td class="td-price">$15</td><td>Larger stuffed animal</td></tr>
+          <tr><td>Ferrero Rocher</td><td class="td-price">$3</td><td>Single chocolate on clear stick</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <img src="images/logo.png" width="80" height="43" alt="Glitter and Thorn">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="bouquets.html">Bouquets</a>
+        <a href="addons.html">Add-Ons</a>
+        <a href="contact.html">Order</a>
+      </div>
+      <hr>
+      <p class="footer-contact"><a href="https://www.instagram.com/glitter.thorn" target="_blank">@glitter.thorn</a></p>
+      <p class="footer-contact"><a href="mailto:glitterthorn.inc@gmail.com">glitterthorn.inc@gmail.com</a></p>
+      <p class="footer-contact">647-549-2397</p>
+      <p class="footer-copy">&copy; 2025 Glitter &amp; Thorn &mdash; Waterloo, Ontario</p>
+    </div>
+  </footer>
+
+<!--
+  AI assistance note (as required by assignment):
+  Tool used: Claude (Anthropic)
+  Prompt used: Asked Claude to help set up the 4-column add-on card grid and debug
+  why the last card border wasn't disappearing with :last-child. Also used to help
+  style the reference table on the dark background section.
+  Page layout, content, and all design choices are my own.
+-->
+
+</body>
+</html>
